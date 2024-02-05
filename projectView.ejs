@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registro de Proyectos Académicos</title>
+</head>
+<body>
+    <h1>Registro de Proyectos Académicos</h1>
+    <form action="/proyectos" method="post">
+        <label for="Titulo">Título:</label><br>
+        <input type="text" id="Titulo" name="Titulo"><br>
+        <label for="Periodo_Academico">Periodo Académico:</label><br>
+        <input type="text" id="Periodo_Academico" name="Periodo_Academico"><br>
+        <label for="cedula_estudiante">Cédula del Estudiante:</label><br>
+        <input type="number" id="cedula_estudiante" name="cedula_estudiante"><br>
+        <label for="nombre_estudiante">Nombre del Estudiante:</label><br>
+        <input type="text" id="nombre_estudiante" name="nombre_estudiante"><br>
+        <label for="apellido_estudiante">Apellido del Estudiante:</label><br>
+        <input type="text" id="apellido_estudiante" name="apellido_estudiante"><br>
+        <label for="linea_de_investigacion">Línea de Investigación:</label><br>
+        <input type="text" id="linea_de_investigacion" name="linea_de_investigacion"><br>
+        <label for="tutor_de_grado">Tutor de Grado:</label><br>
+        <input type="text" id="tutor_de_grado" name="tutor_de_grado"><br>
+        <label for="descripcion_breve">Descripción Breve:</label><br>
+        <textarea id="descripcion_breve" name="descripcion_breve"></textarea><br>
+        <label for="objetivo_general">Objetivo General:</label><br>
+        <textarea id="objetivo_general" name="objetivo_general"></textarea><br>
+        <label for="objetivo_especifico">Objetivo Específico:</label><br>
+        <textarea id="objetivo_especifico" name="objetivo_especifico"></textarea><br>
+        <input type="submit" value="Registrar Proyecto">
+    </form>
+
+    <% if (projects.length > 0) { %>
+        <h2>Proyectos existentes:</h2>
+        <% projects.forEach(function(project) { %>
+            <h3><%= project.Titulo %></h3>
+            <p>Periodo Académico: <%= project.Periodo_Academico %></p>
+            <p>Cédula del Estudiante: <%= project.cedula_estudiante %></p>
+            <p>Nombre del Estudiante: <%= project.nombre_estudiante %></p>
+            <p>Apellido del Estudiante: <%= project.apellido_estudiante %></p>
+            <p>Línea de Investigación: <%= project.linea_de_investigacion %></p>
+            <p>Tutor de Grado: <%= project.tutor_de_grado %></p>
+            <p>Descripción Breve: <%= project.descripcion_breve %></p>
+            <p>Objetivo General: <%= project.objetivo_general %></p>
+            <p>Objetivo Específico: <%= project.objetivo_especifico %></p>
+        <% }); %>
+    <% } %>
+</body>
+</html>
